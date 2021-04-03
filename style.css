@@ -1,1 +1,41 @@
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #e5e5e5;
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.5;
+}
+.main-block {
+    display:flex;
+    flex-wrap: wrap;
+    border: solid grey 1px;
+	/* obsah stránky je omezený do pruhu širokého 960px */
+	width: 960px;
 
+	/* pruh je na stránce vycentrovaný */
+	margin: 0 auto;
+
+	background: white;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.main-block__details{
+    display:flex;
+    flex: 1 1 100%;
+    border: solid grey 1px;
+}
+.header-block{
+    display: flex;
+    flex-direction: column;
+}
+.main-block__details{
+    flex: 1 1 100%;
+}
+.button_block{
+    display:flex;
+}
+.button-block__prvek{
+    border: solid grey 1px;
+}
