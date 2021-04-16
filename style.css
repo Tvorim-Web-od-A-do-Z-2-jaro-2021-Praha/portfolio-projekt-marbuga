@@ -10,29 +10,27 @@ body {
 	font-size: 14px;
 	line-height: 1.5;
 }
+
 .main-block {
     display:flex;
     flex-direction: column;
     border: solid lightgrey 0.5px;
 	/* obsah stránky je omezený do pruhu širokého 960px */
 	max-width: 960px;
-
 	/*pruh je na stránce vycentrovaný*/ 
 	margin: 0 auto; 
-
 	background: white;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.main-block__details{
+.main-block__details {
     display:flex;
 	flex-direction: column;
     flex: 1 1 100%;
 	padding-right: 35px;
-	
-	
 }
-.header-block{
+
+.header-block {
 	min-height: 400px;
     display: flex;
 	flex: 1 1 100%;
@@ -45,27 +43,31 @@ body {
 	font-size: 16px;
 }
 
-.header-block__prvek{
+.header-block__prvek {
 	color:lightgrey;
 	flex: 1 1 100%;
 }
-.header-block__prvek--pozdrav{
+
+.header-block__prvek--pozdrav {
 	color:yellowgreen;
 	font-weight: 600;
 }
+
 .header-block__prvek--martina{
 	text-shadow: 1px 1px yellowgreen;
 }
-.main-block__details{
+
+.main-block__details {
     flex: 1 1 100%;
 	padding-left: 35px;
 	padding-bottom:20px;
 	padding-top:20px;
 }
-.button_block{
+.button_block {
     display:flex;
 }
-.button-block__prvek{
+
+.button-block__prvek {
 	display:inline-block;
 	min-width:100px;
 	text-align: center;
@@ -76,12 +78,14 @@ body {
 	padding:10px;
 	margin-right:25px;
 }
-.button-block__prvek:hover{
+
+.button-block__prvek:hover {
 	background-color: lightgrey;
 	color:#181818;
 	font-size: 16px;
 }
-.button-block__prvek--about:hover{
+
+.button-block__prvek--about:hover {
 	background-color: yellowgreen;
 }
 
@@ -91,12 +95,12 @@ body {
 	justify-content: space-between;
 	flex-direction: column;
 	padding:0;
-	
-	
 }
-.about-block__prvek{
+
+.about-block__prvek {
 	flex: 1 1 100%;
 }
+
 .me-block {
 	display: flex;
 	flex-direction: column;
@@ -104,66 +108,71 @@ body {
 	background-color:#181818;
 	padding-left:0;
 }
-.me-block__prvek--text{
+
+.me-block__prvek--text {
 	margin-left: 35px;
 	color:darkgray
 }
 
-.me-block__prvek--nadpis{
+.me-block__prvek--nadpis {
 	text-align: center;
 	color: yellowgreen;
-	
 }
-.follow-block{
+
+.follow-block {
 	display:flex;
 }
-.follow-block__prvek{
+
+.follow-block__prvek {
 	padding:10px;
 }
 
-.picture-block{
+.picture-block {
 	display:flex;
 	justify-content: center;
 }
 
-.picture-block__me{
+.picture-block__me {
 	max-height:300px;
 	margin-top:15px;
 	margin-bottom:15px;
-	
 }
-.courses-block{
+
+.courses-block {
 	padding-left: 35px;
 }
-.courses-block__prvek{
+
+.courses-block__prvek {
 	margin:0 5px 5px 5px;
 	border: 1px solid lightgrey;
 	border-radius: 5px;
 	margin-right: 35px;
 }
-.courses-block__prvek--nadpis{
+
+.courses-block__prvek--nadpis {
 	text-align: center;
 	border: none;
 	margin:10px;
 }
-.czechitas-block__prvek, .work-block__prvek{
+
+.czechitas-block__prvek, .work-block__prvek {
 	text-align: center;
 }
 
-.work-block{
+.work-block {
 	background-color:#181818;
-	
 }
-.work-block__prvek{
+
+.work-block__prvek {
 	text-align: center;
 	color: darkgrey;
 }
-.career-block__prvek--nadpis, .skills-block__prvek--nadpis{
+
+.career-block__prvek--nadpis, .skills-block__prvek--nadpis {
 	color: yellowgreen;
 }
 
-
-.footer-block{
+.footer-block {
 	background-color: black;
 	color:lightgrey;
 	max-height:90px;
@@ -174,98 +183,103 @@ body {
 	font-size: 12px;
 }
 
-.footer-block__prvek{
+.footer-block__prvek {
 	margin:5px;
-	
 	color: lightgrey;
 }
-.footer-block__prvek--mail:hover{
+.footer-block__prvek--mail:hover {
 	color: darkblue;
 }
 
-.follow-block{
+.follow-block {
 	display: flex;
 	justify-content: space-around;
 }
-.follow-block1__prvek{
+
+.follow-block1__prvek {
 	margin:5px;
 }
 
 @media(min-width:600px) {
-	body{
+	body {
 		font-size: 16px;
 	}
-	.about-block{
+
+	.about-block {
 		flex-direction: row-reverse;
-		
-		}
+	}
 			
-	.picture-block{
+	.picture-block {
 		background: linear-gradient(0.25turn, #FFE4E1 , #ebf8e1, #FFC0C0C0);
 		padding-top: 35px;
 		padding-bottom: 35px;
-		}
-	.me-block{
+	}
+
+	.me-block {
 		background: linear-gradient(0.25turn, #C0C0C0, #ebf8e1, #FFE4E1);
 		padding-top: 35px;
 		padding-bottom: 35px;
 	}
-	.me-block__prvek--text{
+
+	.me-block__prvek--text {
 		color:#181818;
 	}
-	.me-block__prvek--nadpis{
+
+	.me-block__prvek--nadpis {
 		color: #181818;
 	}
 	
-	.courses-block{
+	.courses-block {
 		background: #181818;
 		color:darkgray;
 		flex-direction: row;
 		flex-wrap: wrap; 
 	}
-	.courses-block__prvek{
+
+	.courses-block__prvek {
 		flex: 1 1 40%;
 		margin-top: 15px;
 		margin-bottom: 30px;
 	}
-	.courses-block__prvek--kurz:hover{
+
+	.courses-block__prvek--kurz:hover {
 		background: linear-gradient(0.25turn, #C0C0C0, #ebf8e1, #FFE4E1);
 		color: #181818;
-
 	}
-	.courses-block__prvek--nadpis{
+
+	.courses-block__prvek--nadpis {
 		flex: 1 1 100%;
 		color: yellowgreen;
 		margin: 10px;
 	}
 	
-
-	.czechitas-block__prvek--podnadpis{
+	.czechitas-block__prvek--podnadpis {
 		color: yellowgreen;
 	}
 
-	.work-block{
+	.work-block {
 		flex-direction: row;
 		flex-wrap: wrap;
 		background: linear-gradient(0.25turn, #C0C0C0, #ebf8e1, #FFE4E1);
-
 	}
-	.work-block__prvek{
+
+	.work-block__prvek {
 		flex: 1 1 45%;
 		color: #181818;
-
 	}
-	.career-block__prvek--nadpis, .skills-block__prvek--nadpis{
+
+	.career-block__prvek--nadpis, .skills-block__prvek--nadpis {
 		color: #181818;
-
 	}
-	.footer-block{
+
+	.footer-block {
 		flex-direction: row;
 	}
-	.footer-block__prvek{
+
+	.footer-block__prvek {
 		font-size: 16px;
 	}
-	.main-block__details--paticka{
+	.main-block__details--paticka {
 		padding-bottom: 15px;
 		padding-top: 15px;
 	}
