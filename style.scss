@@ -1,0 +1,409 @@
+html { box-sizing: border-box; }
+*, :after, :before { box-sizing: inherit; }
+
+$MainColor: #909090;
+$SecondColor: #CB997E;
+$ThirdColor:#faedcd;
+$TextCenter: center;
+$MarginBig: 35px;
+$MarginExtraLarge: 30px;
+$MarginLarge: 25px;
+$MarginMedium: 20px;
+$MarginSmall: 15px;
+$MarginsmallSmall: 10px;
+$MarginSuperSmall: 5px;
+$FontSmall: 12px;
+$FontMedium: 14px;
+$FontBig: 16px;
+
+@mixin DisplayFlex() {
+    display:flex;
+    flex-direction: column;
+}
+
+@mixin Flex ($FlexGrow: 1,$FlexShrink: 1,$FlexBasis: 100%) {
+    flex-grow: $FlexGrow;
+    flex-shrink: $FlexShrink;
+    flex-basis: $FlexBasis;
+}
+
+@mixin Grid() {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+	row-gap: 20px;
+}
+
+@mixin Border($BorderWidth: 1px, $BorderStyle: solid, $BorderColor: $MainColor) {
+	border-width: $BorderWidth;
+	border-style: $BorderStyle;
+	border-color: $BorderColor;
+}
+
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #e5e5e5;
+	font-family: "Source Sans Pro", sans-serif;
+	font-weight: 400;
+	font-size: $FontMedium;
+	line-height: 1.5;
+}
+
+.main-block {
+    @include DisplayFlex();
+    @include Border(0.5px);
+	/* obsah stránky je omezený do pruhu širokého 960px */
+	max-width: 960px;
+	/*pruh je na stránce vycentrovaný*/ 
+	margin: 0 auto; 
+	background: white;
+	box-shadow: 0 0 20px $MainColor;
+}
+
+.main-block__details {
+    @include DisplayFlex();
+    @include Flex();
+	padding-right: 35px;
+}
+
+.header-block {
+	@include DisplayFlex();
+    @include Flex();
+	min-height: 400px;
+    background-image: url(images/background2.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	justify-content: space-around;
+	font-size: $FontBig;
+	padding-bottom: 40px;
+}
+
+.header-block__prvek {
+	color:	$MainColor;
+	@include Flex();
+}
+
+.header-block__prvek--pozdrav {
+	color: $SecondColor;
+	font-weight: 600;
+	margin-top: 50px;
+}
+
+.header-block__prvek--martina {
+	text-shadow: 1px 1px $SecondColor;
+}
+
+.main-block__details {
+    @include Flex();
+	padding: {
+		left: 45px;
+		bottom: 20px;
+		top: 20px; 
+	}
+
+}
+.button_block {
+    @include DisplayFlex();
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: $MarginMedium;
+}
+
+.button-block__prvek {
+	@include Flex();
+	@include Border;
+	min-width: 100px;
+	text-align: $TextCenter;
+	text-decoration: none;
+	color: lightgrey;
+	border-radius: 5px;
+	padding: 10px;
+	margin-right: $MarginLarge;
+	margin-bottom: $MarginLarge;
+	font-size: $FontSmall;
+	
+	&:hover {
+		background-color: $MainColor;
+		color:#181818;
+	}
+
+}
+
+.button-block__prvek--about:hover {
+	background-color: #828282;
+}
+
+.about-block, .courses-block {
+	@include DisplayFlex();
+	background-color:#e9edc9 ;
+	justify-content: space-between;
+	padding: 0;
+}
+
+.about-block__prvek {
+	@include Flex();
+	margin: {
+		left: $MarginSuperSmall;
+		right: $MarginExtraLarge; 
+	}
+
+	&--navigace {
+		margin: {
+			left: 0;
+			right: 0;
+			bottom: $MarginSmall; 
+		}
+	}
+}
+ 
+.me-block {
+	@include DisplayFlex();
+    @include Flex();
+	padding-left: 10px;
+}
+
+.me-block__prvek--text {
+	margin-left: $MarginBig;
+	color: $MainColor;
+	text-align: $TextCenter;
+}
+
+.me-block__prvek--nadpis {
+	text-align: $TextCenter;
+	color: $SecondColor;
+}
+
+.follow-block {
+	@include DisplayFlex();
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	&__prvek {
+		padding: 10px;
+		margin: {
+			left: $MarginMedium;
+			right: $MarginMedium; 
+		}
+	}
+	
+}
+
+.picture-block {
+	@include DisplayFlex();
+	flex-direction: row;
+	justify-content: center;
+
+	&__me {
+		max-height:300px;
+		margin: {
+			top: $MarginMedium;
+			bottom: $MarginMedium;
+		}
+	}
+}
+
+.courses-block {
+	padding-left: 35px;
+	background-color: #fefae0;
+
+	&__prvek {
+		margin:0 10px 20px 10px;
+		@include Border();
+		border-radius: 5px;
+		margin-right: $MarginBig;
+		color: 	$MainColor;
+	}
+}
+	
+.courses-block__prvek--nadpis {
+	text-align: $TextCenter;
+	border: none;
+	margin: $MarginsmallSmall;
+}
+
+.courses-block__prvek--kurz1, .courses-block__prvek--kurz2, .courses-block__prvek--kurz3, .courses-block__prvek--kurz4{
+	padding: 15px;
+}
+
+.czechitas-block__prvek, .work-block__prvek {
+	text-align: $TextCenter;
+}
+
+.work-block {
+	background-color: $ThirdColor;
+
+	&__prvek {
+		text-align: $TextCenter;
+		color: $MainColor;
+	}
+}
+
+.career-block__prvek--nadpis, .skills-block__prvek--nadpis {
+	color:	$MainColor;
+}
+
+.footer-block { 
+	@include DisplayFlex();
+	background-color: #d4a373;
+	color:	$MainColor;
+	max-height: 90px;
+	justify-content: space-around;
+	align-items: center;
+	font-size: $FontSmall;
+
+	&__prvek {
+		margin: $MarginSuperSmall;
+		color: 	$MainColor;
+	}
+}
+
+
+.footer-block__prvek--mail:hover {
+	color:	$MainColor;
+}
+
+@media(min-width:600px) {
+	body {
+		font-size: $FontBig;
+	}
+
+	.button-block__prvek {
+		font-size: $FontMedium;
+	}
+
+	.about-block {
+		@include Grid();
+		grid-template-rows: minmax(100px,auto);
+		grid-template-areas: "me picture"
+							 "follow follow";
+	}
+			
+	.picture-block {
+		padding: { 
+			top: 35px;
+			bottom: 35px;
+		}
+
+		grid-area: picture;
+	}
+	
+	
+
+	.me-block {
+		padding: {
+			top: 35px;
+			bottom: 0;
+		}
+
+		grid-area: me;
+	}
+
+	.me-block__prvek--text {
+		color: $MainColor;
+		padding: {
+			left: 15px;
+			right: 15px; 
+		}
+	}
+
+	.me-block__prvek--nadpis {
+		color:	$MainColor;	
+		text-align: $TextCenter;
+	} 
+	
+	.follow-block {
+		grid-area: follow;
+	}
+
+	.courses-block {
+		color: $MainColor;
+		@include Grid();
+		grid-template-rows: minmax(70px, auto);
+		grid-template-areas:
+							 "nadpis nadpis"
+							 "kurz1 kurz2"
+							 "kurz3 kurz4";
+		place-content: center;
+	}
+
+	.courses-block__prvek {
+		margin-bottom: $MarginExtraLarge;
+
+		&--kurz1 {
+			grid-area: kurz1 ;
+		}
+
+		&--kurz2 {
+			grid-area: kurz2 ;
+		}
+
+		&--kurz3 {
+			grid-area: kurz3 ;
+		}
+		
+		&--kurz4 {
+			grid-area: kurz4 ;
+		}
+	}
+
+	.courses-block__prvek--nadpis {
+		grid-area: nadpis;
+		align-self: center;
+		color: $SecondColor;
+		margin: $MarginsmallSmall;
+	}
+
+	.courses-block__prvek--kurz1, .courses-block__prvek--kurz2, .courses-block__prvek--kurz3, .courses-block__prvek--kurz4{
+		place-items: center;
+	}
+	
+	.czechitas-block__prvek--podnadpis {
+		color: $SecondColor;
+	}
+
+	.work-block {
+		flex-direction: row;
+		flex-wrap: wrap;
+
+		&__prvek { 
+			@include Flex(1, 1, 45%);
+			color: $MainColor;
+		}
+	}
+
+	
+	.career-block__prvek--nadpis, .skills-block__prvek--nadpis {
+		color: $MainColor;
+	}
+
+	.footer-block {
+		flex-direction: row;
+		&__prvek { font-size: $FontSmall; }
+		
+	}
+
+	.follow-block1__prvek {
+		margin: {
+			left: $MarginsmallSmall;
+			right: $MarginsmallSmall;
+		}
+	}
+
+	.main-block__details--paticka {
+		padding: {
+			bottom: 15px;
+			top: 15px; 
+		}
+	}
+}
+
+@media(min-width:800px){
+	.footer-block__prvek, .button-block__prvek {
+		font-size: $FontBig;
+		
+	}
+}
+
