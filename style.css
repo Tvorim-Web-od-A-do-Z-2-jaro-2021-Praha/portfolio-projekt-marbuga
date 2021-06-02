@@ -95,13 +95,14 @@ body {
 }
 
 .header-block__prvek--pozdrav {
-  color: #CB997E;
+  color: #751aff;
   font-weight: 600;
-  margin-top: 50px;
+  margin-top: 15px;
 }
 
 .header-block__prvek--martina {
-  text-shadow: 1px 1px #CB997E;
+  text-shadow: 1px 1px #751aff;
+  margin-top: 0px;
 }
 
 .main-block__details {
@@ -162,6 +163,10 @@ body {
   background-color: #828282;
 }
 
+.skills-block__prvek--malasipka, .sipka {
+  display: none;
+}
+
 .about-block, .courses-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -170,10 +175,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #e9edc9;
+  background-color: #d9d9d9;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0;
 }
 
@@ -190,8 +198,8 @@ body {
 }
 
 .about-block__prvek--navigace {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: 0px;
+  margin-right: 0px;
   margin-bottom: 15px;
 }
 
@@ -215,13 +223,13 @@ body {
 
 .me-block__prvek--text {
   margin-left: 35px;
-  color: #909090;
+  color: #0d0d0d;
   text-align: center;
 }
 
 .me-block__prvek--nadpis {
   text-align: center;
-  color: #CB997E;
+  color: #751aff;
 }
 
 .follow-block {
@@ -246,6 +254,31 @@ body {
   margin-right: 20px;
 }
 
+.follow-block__prvek, .follow-block1__prvek {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #909090;
+  min-width: 100px;
+  text-align: center;
+  text-decoration: none;
+  color: #751aff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 25px;
+  margin-bottom: 0px;
+  font-size: 12px;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.follow-block__prvek:hover, .follow-block1__prvek:hover {
+  background-color: #751aff;
+  color: #ffffff;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 0.7;
+}
+
 .picture-block {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -254,21 +287,21 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 .picture-block__me {
-  max-height: 300px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  max-height: 400px;
+  max-width: 300px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .courses-block {
   padding-left: 35px;
-  background-color: #fefae0;
+  background-color: #f2f2f2;
 }
 
 .courses-block__prvek {
@@ -281,10 +314,24 @@ body {
   color: #909090;
 }
 
-.courses-block__prvek--nadpis {
+.courses-block__prvek--nadpis, .courses-block__prvek--paragraph {
   text-align: center;
   border: none;
   margin: 10px;
+  color: #751aff;
+}
+
+.czechitas-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .courses-block__prvek--kurz1, .courses-block__prvek--kurz2, .courses-block__prvek--kurz3, .courses-block__prvek--kurz4 {
@@ -295,17 +342,32 @@ body {
   text-align: center;
 }
 
-.work-block {
-  background-color: #faedcd;
+#scrum, #developer, #analytics, #code, #hey {
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
-.work-block__prvek {
+#scrum:hover, #developer:hover, #analytics:hover, #code:hover, #hey:hover {
+  -webkit-transform: scale(1.12);
+          transform: scale(1.12);
+}
+
+.work-block, .work1-block {
+  background-color: #e6e6e6;
+}
+
+.work-block__prvek, .work1-block__prvek {
   text-align: center;
   color: #909090;
 }
 
-.career-block__prvek--nadpis, .skills-block__prvek--nadpis {
-  color: #909090;
+.career-block__prvek--nadpis, .skills-block__prvek--nadpis, .czechitas-block__prvek--podnadpis {
+  color: #751aff;
+}
+
+.skills-block__prvek--nadpis {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .footer-block {
@@ -316,7 +378,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #d4a373;
+  background-color: #bfbfbf;
   color: #909090;
   max-height: 90px;
   -ms-flex-pack: distribute;
@@ -329,16 +391,35 @@ body {
 
 .footer-block__prvek {
   margin: 5px;
-  color: #909090;
+  color: #751aff;
+  text-decoration: none;
 }
 
 .footer-block__prvek--mail:hover {
-  color: #909090;
+  color: #0d0d0d;
 }
 
 @media (min-width: 600px) {
   body {
     font-size: 16px;
+  }
+  .sipka {
+    display: block;
+    margin-top: 15px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 5s linear infinite;
+            animation: dash 5s linear infinite;
+  }
+  @-webkit-keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
   .button-block__prvek {
     font-size: 14px;
@@ -357,10 +438,16 @@ body {
   }
   .picture-block {
     padding-top: 35px;
-    padding-bottom: 35px;
+    padding-bottom: 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: picture;
+  }
+  .picture-block__me {
+    padding-top: 50px;
   }
   .me-block {
     padding-top: 35px;
@@ -370,7 +457,7 @@ body {
     grid-area: me;
   }
   .me-block__prvek--text {
-    color: #909090;
+    color: #0d0d0d;
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -383,6 +470,9 @@ body {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: follow;
+  }
+  .follow-block__prvek, .follow-block1__prvek {
+    font-size: 14px;
   }
   .courses-block {
     color: #909090;
@@ -429,14 +519,15 @@ body {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-    color: #CB997E;
-    margin: 10px;
+    color: #751aff;
+    margin: 0px;
   }
   .courses-block__prvek--kurz1, .courses-block__prvek--kurz2, .courses-block__prvek--kurz3, .courses-block__prvek--kurz4 {
     place-items: center;
   }
   .czechitas-block__prvek--podnadpis {
-    color: #CB997E;
+    color: #751aff;
+    margin: 0px;
   }
   .work-block {
     -webkit-box-orient: horizontal;
@@ -457,7 +548,20 @@ body {
     color: #909090;
   }
   .career-block__prvek--nadpis, .skills-block__prvek--nadpis {
-    color: #909090;
+    color: #751aff;
+  }
+  .skills-block__prvek--malasipka {
+    display: inline-block;
+    margin-top: 0px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 10s linear infinite;
+            animation: dash 10s linear infinite;
+  }
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
   }
   .footer-block {
     -webkit-box-orient: horizontal;

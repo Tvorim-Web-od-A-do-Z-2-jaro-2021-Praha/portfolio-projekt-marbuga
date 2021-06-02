@@ -2,9 +2,11 @@ html { box-sizing: border-box; }
 *, :after, :before { box-sizing: inherit; }
 
 $MainColor: #909090;
-$SecondColor: #CB997E;
-$ThirdColor:#faedcd;
+$SecondColor: #751aff;
+$ThirdColor: #e6e6e6;
+$TextColor:#0d0d0d;
 $TextCenter: center;
+
 $MarginBig: 35px;
 $MarginExtraLarge: 30px;
 $MarginLarge: 25px;
@@ -12,6 +14,8 @@ $MarginMedium: 20px;
 $MarginSmall: 15px;
 $MarginsmallSmall: 10px;
 $MarginSuperSmall: 5px;
+$MarginNull: 0px;
+
 $FontSmall: 12px;
 $FontMedium: 14px;
 $FontBig: 16px;
@@ -89,11 +93,12 @@ body {
 .header-block__prvek--pozdrav {
 	color: $SecondColor;
 	font-weight: 600;
-	margin-top: 50px;
+	margin-top: $MarginSmall;
 }
 
 .header-block__prvek--martina {
 	text-shadow: 1px 1px $SecondColor;
+	margin-top: $MarginNull;
 }
 
 .main-block__details {
@@ -103,8 +108,8 @@ body {
 		bottom: 20px;
 		top: 20px; 
 	}
-
 }
+
 .button_block {
     @include DisplayFlex();
 	flex-direction: row;
@@ -129,17 +134,21 @@ body {
 		background-color: $MainColor;
 		color:#181818;
 	}
-
 }
 
 .button-block__prvek--about:hover {
 	background-color: #828282;
 }
 
+.skills-block__prvek--malasipka, .sipka {
+	display:none;
+}
+
 .about-block, .courses-block {
 	@include DisplayFlex();
-	background-color:#e9edc9 ;
+	background-color:#d9d9d9;
 	justify-content: space-between;
+	align-items: center;
 	padding: 0;
 }
 
@@ -152,8 +161,8 @@ body {
 
 	&--navigace {
 		margin: {
-			left: 0;
-			right: 0;
+			left: $MarginNull;
+			right: $MarginNull;
 			bottom: $MarginSmall; 
 		}
 	}
@@ -167,7 +176,7 @@ body {
 
 .me-block__prvek--text {
 	margin-left: $MarginBig;
-	color: $MainColor;
+	color: $TextColor;
 	text-align: $TextCenter;
 }
 
@@ -188,26 +197,48 @@ body {
 			right: $MarginMedium; 
 		}
 	}
+}
+
+.follow-block__prvek, .follow-block1__prvek {
+	@include Border;
+	min-width: 100px;
+	text-align: $TextCenter;
+	text-decoration: none;
+	color: $SecondColor;
+	border-radius: 5px;
+	padding: 10px;
+	margin-right: $MarginLarge;
+	margin-bottom: $MarginNull;
+	font-size: $FontSmall;
+	transition: all 0.7s ease-in-out; 
 	
+	
+	&:hover {
+		background-color: $SecondColor;
+		color: #ffffff;
+		transform: scale(1.2);
+		opacity: 0.7;
+	}
 }
 
 .picture-block {
 	@include DisplayFlex();
-	flex-direction: row;
+	//flex-direction: row;
 	justify-content: center;
 
 	&__me {
-		max-height:300px;
+		max-height:400px;
+		max-width: 300px;
 		margin: {
-			top: $MarginMedium;
-			bottom: $MarginMedium;
+			top: $MarginNull;
+			bottom: $MarginNull;
 		}
 	}
 }
 
 .courses-block {
 	padding-left: 35px;
-	background-color: #fefae0;
+	background-color: #f2f2f2;
 
 	&__prvek {
 		margin:0 10px 20px 10px;
@@ -218,10 +249,16 @@ body {
 	}
 }
 	
-.courses-block__prvek--nadpis {
+.courses-block__prvek--nadpis, .courses-block__prvek--paragraph {
 	text-align: $TextCenter;
 	border: none;
 	margin: $MarginsmallSmall;
+	color: 	$SecondColor;
+}
+
+.czechitas-block {
+	@include DisplayFlex();
+	align-items: center;
 }
 
 .courses-block__prvek--kurz1, .courses-block__prvek--kurz2, .courses-block__prvek--kurz3, .courses-block__prvek--kurz4{
@@ -232,7 +269,15 @@ body {
 	text-align: $TextCenter;
 }
 
-.work-block {
+#scrum, #developer, #analytics, #code, #hey { 
+	transition: all .5s ease-in-out; 
+}
+
+#scrum:hover, #developer:hover, #analytics:hover, #code:hover, #hey:hover {
+	transform: scale(1.12);
+}
+
+.work-block, .work1-block {
 	background-color: $ThirdColor;
 
 	&__prvek {
@@ -241,13 +286,18 @@ body {
 	}
 }
 
-.career-block__prvek--nadpis, .skills-block__prvek--nadpis {
-	color:	$MainColor;
+.career-block__prvek--nadpis, .skills-block__prvek--nadpis, .czechitas-block__prvek--podnadpis {
+	color:$SecondColor;
 }
+
+.skills-block__prvek--nadpis {
+	margin-top:$MarginNull;
+	margin-bottom: $MarginNull;
+} 
 
 .footer-block { 
 	@include DisplayFlex();
-	background-color: #d4a373;
+	background-color:  #bfbfbf;
 	color:	$MainColor;
 	max-height: 90px;
 	justify-content: space-around;
@@ -256,18 +306,33 @@ body {
 
 	&__prvek {
 		margin: $MarginSuperSmall;
-		color: 	$MainColor;
+		color: 	$SecondColor;
+		text-decoration: none;
 	}
 }
 
 
 .footer-block__prvek--mail:hover {
-	color:	$MainColor;
+	color:	$TextColor;
 }
 
 @media(min-width:600px) {
 	body {
 		font-size: $FontBig;
+	}
+
+	.sipka {
+		display:block ;
+		margin-top:$MarginSmall;
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 5s linear infinite;
+	}
+	  
+	@keyframes dash {
+		to {
+		  stroke-dashoffset: 0;
+		}
 	}
 
 	.button-block__prvek {
@@ -284,13 +349,15 @@ body {
 	.picture-block {
 		padding: { 
 			top: 35px;
-			bottom: 35px;
+			bottom: 0;
 		}
-
+		align-items: center;
 		grid-area: picture;
+
+		&__me {
+			padding-top: 50px;
+		}
 	}
-	
-	
 
 	.me-block {
 		padding: {
@@ -302,7 +369,7 @@ body {
 	}
 
 	.me-block__prvek--text {
-		color: $MainColor;
+		color: $TextColor;
 		padding: {
 			left: 15px;
 			right: 15px; 
@@ -316,6 +383,10 @@ body {
 	
 	.follow-block {
 		grid-area: follow;
+	}
+
+	.follow-block__prvek, .follow-block1__prvek {
+		font-size: $FontMedium;
 	}
 
 	.courses-block {
@@ -353,7 +424,7 @@ body {
 		grid-area: nadpis;
 		align-self: center;
 		color: $SecondColor;
-		margin: $MarginsmallSmall;
+		margin: $MarginNull;
 	}
 
 	.courses-block__prvek--kurz1, .courses-block__prvek--kurz2, .courses-block__prvek--kurz3, .courses-block__prvek--kurz4{
@@ -362,6 +433,7 @@ body {
 	
 	.czechitas-block__prvek--podnadpis {
 		color: $SecondColor;
+		margin:$MarginNull;
 	}
 
 	.work-block {
@@ -376,12 +448,32 @@ body {
 
 	
 	.career-block__prvek--nadpis, .skills-block__prvek--nadpis {
-		color: $MainColor;
+		color: $SecondColor;
+	}
+
+	.skills-block__prvek--malasipka {
+		//position: absolute;
+		//top:30px;
+		//left:475px;
+		display:inline-block;
+		margin-top: $MarginNull;
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dash 10s linear infinite;
+	}
+	  
+	@keyframes dash {
+		to {
+		  stroke-dashoffset: 0;
+		}
 	}
 
 	.footer-block {
 		flex-direction: row;
-		&__prvek { font-size: $FontSmall; }
+		
+		&__prvek { 
+			font-size: $FontSmall; 
+		}
 		
 	}
 
